@@ -4,20 +4,20 @@
   tasks:
     - name: Apply java-app-service
       kubernetes.core.k8s: 
-        definition: "{{ lookup('file', './java-app/java-app-service.yaml') }}"
+        definition: "{{ lookup('file', './java-app-service.yaml') }}"
         state: present
     
     - name: Apply java-app-ingress
       kubernetes.core.k8s: 
-        definition: "{{ lookup('file', './java-app/java-app-ingress.yaml') }}"
+        definition: "{{ lookup('file', './java-app-ingress.yaml') }}"
         state: present
       
     - name: Apply java-app-hpa
       kubernetes.core.k8s: 
-        definition: "{{ lookup('file', './java-app/java-app-hpa.yaml') }}"
+        definition: "{{ lookup('file', './java-app-hpa.yaml') }}"
         state: present
     
     - name: Apply java-app-deployment
       kubernetes.core.k8s: 
-        definition: "{{ lookup('file', './java-app/java-app-deployment.yaml') }}"
+        definition: "{{ lookup('file', './java-app-deployment.yaml') }}"
         state: present
