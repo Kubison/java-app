@@ -4,7 +4,7 @@
   tasks:
     - name: Apply java-app-service
       kubernetes.core.k8s: 
-        definition: "{{ lookup('file', './java-app/java-app-secret.yaml') }}"
+        definition: "{{ lookup('file', './java-app/java-app-ingress.yaml') }}"
         state: present
     
     - name: Apply java-app-ingress
