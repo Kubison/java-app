@@ -1,6 +1,8 @@
 ---
 - name: Deployjava-app to Kubernetes
   hosts: localhost
+  environment:
+    K8S_AUTH_KUBECONFIG: "{{$K8S_AUTH_KUBECONFIG}}"
   tasks:
     - name: Apply java-app-service
       kubernetes.core.k8s: 
